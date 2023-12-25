@@ -58,7 +58,7 @@ html::-webkit-scrollbar-thumb:active
 nav
 {
     background-color: var(--clr-main);
-    margin-top: 30px;
+    margin-block: 30px;
     padding-inline: var(--pad-inline-body);
     box-shadow: 0 0 5px var(--clr-box-shadow);
     height: 72px;
@@ -108,7 +108,7 @@ nav a
     font-size: 25px;
     min-width: 150px;
 }
-#menu-clm a:last-child{padding-bottom: 20px;}
+#menu-items {border-bottom: 10px var(--clr-main) solid;}
 #menu-icon
 {
     top: 40px;
@@ -130,7 +130,7 @@ nav a
     display: flex;
     flex-direction: column;
 }
-#menu-clm:hover #menu-icon {transform: rotateY(120deg);}
+#menu-clm:hover #menu-icon {transform: rotateY(180deg);}
 #menu-clm a:hover
 {
     background-color: var(--clr-overlay);
@@ -145,14 +145,9 @@ nav a
     align-items: center;
     justify-content: space-between;
 }
+#Hero-L {flex-direction: column;}
 #Hero-R img {width: 41vw;}
 #Hero > div {width: 40vw;}
-
-#Hero-L 
-{ 
-    flex-direction: column;
-    margin-top: 5vh;
-}
 
 #Hero-L h3
 {
@@ -264,23 +259,22 @@ nav a
 }
 
 /*! Responsive */
-@media (width < 426px)
+@media (width < 850px)
 {
     #menu-items {min-width: 100%;}
     #menu-clm a{padding-left: var(--space-left);}
+    #navbar-items {display: none;}
+    #menu-icon {display: inline-block;}
 }
 
-@media (width > 1280px)
+@media (width >= 1080px)
 {
     :root { --pad-inline-body: 10%; }
     #menu-row a {padding-inline: 25px;}
 }
 
-@media (width < 950px)
+@media (width < 1080px)
 {
-    #navbar-items {display: none;}
-    #menu-icon {display: inline-block;}
-
     #Hero
     {
         flex-direction: column;
@@ -307,19 +301,5 @@ nav a
     {
         height: min(3.5vw, 1rem);
         line-height: min(4vw, 1.2rem);
-    }
-}
-
-@media (1280px >= width >= 950px)
-{
-    #Hero-L
-    {
-        align-self: flex-start;
-        margin: 25vw 0 22vw 4vw;
-    }
-    #Hero-R
-    {
-        align-self: flex-end;
-        margin: 22vw 4vw 15vw 0;
     }
 }
