@@ -1,4 +1,5 @@
 /* TODO:
+* Make #Hero-L Bigger than #Hero-R in Mobile
 * Shorten Hero related media queries (with variables?)
 * Bugfix: Narrowest Width in 500% zoom looks broken */
 
@@ -8,12 +9,12 @@
     --clr-dark: #333;
     --clr-light: #eee;
     --clr-main: #00d5ff;
-    --clr-overlay: #00b1d5;
-    --clr-highlight: #ffff39;
+    --clr-overlay: #00aacc;
+    --clr-highlight: #9fff51;
     --clr-box-shadow: #00d5ff4b;
     --clr-txt-shadow: #33333375;
     --clr-scroll: #5f5f5f88; 
-    --pad-inline-body: 5%;
+    --pad-inline-body: 10%;
     --space-left: calc(var(--pad-inline-body) + 21px);
 }
 
@@ -73,7 +74,7 @@ nav a
 #menu-row a
 {
     font-size: 18px;
-    padding: 25px 15px;
+    padding: 25px 25px;
     border-radius: 0px;
 }
 #menu-row
@@ -103,7 +104,6 @@ nav a
 #menu-clm a
 {
     background-color: var(--clr-main);
-    box-shadow: 0 0 5px var(--clr-box-shadow);
     padding: 10px 30px 10px 50px;
     font-size: 25px;
     min-width: 150px;
@@ -135,6 +135,7 @@ nav a
 {
     background-color: var(--clr-overlay);
     color: var(--clr-highlight);
+    text-shadow: 0 0 5px var(--clr-txt-shadow);
 }
 
 /*! Hero Section */
@@ -259,22 +260,13 @@ nav a
 }
 
 /*! Responsive */
-@media (width < 850px)
+@media (orientation: portrait)
 {
+    :root { --pad-inline-body: 5%; }
     #menu-items {min-width: 100%;}
     #menu-clm a{padding-left: var(--space-left);}
     #navbar-items {display: none;}
     #menu-icon {display: inline-block;}
-}
-
-@media (width >= 1080px)
-{
-    :root { --pad-inline-body: 10%; }
-    #menu-row a {padding-inline: 25px;}
-}
-
-@media (width < 1080px)
-{
     #Hero
     {
         flex-direction: column;
@@ -287,19 +279,19 @@ nav a
     }
     #Hero-L button
     {
-        width: min(30vw, 10rem);
-        padding-block: min(2vw, .5rem);
-        margin-top: min(4vw, 1.2rem);
+        width: 30vw;
+        padding-block: 2vw;
+        margin-top: 4vw;
     }
-    #Hero-L button a {font-size: min(4vw, 1.3rem);}
-    #Hero h1 {font-size: min(12vw, 4rem);}
-    #Hero h3 {font-size: min(6vw, 2rem);}
-    #hero-mid-line {gap: min(3vw, 1.3rem);}
+    #Hero-L button a {font-size: 4vw;}
+    #Hero h1 {font-size: 12vw;}
+    #Hero h3 {font-size: 6vw;}
+    #hero-mid-line {gap: 3vw;}
     #Hero-R img {width: 45vh;}
-    #typed-text p {font-size: min(2.3vw, .75rem);}
+    #typed-text p {font-size: 2.3vw;}
     #typed-text
     {
-        height: min(3.5vw, 1rem);
-        line-height: min(4vw, 1.2rem);
+        height: 3.5vw;
+        line-height: 4vw;
     }
 }
